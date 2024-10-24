@@ -1,4 +1,3 @@
-
 const FeaturesList = ({ features }) => {
   return (
     <ul>
@@ -9,7 +8,4 @@ const FeaturesList = ({ features }) => {
     </ul>
   );
 };
-
-
-
 export default FeaturesList;
