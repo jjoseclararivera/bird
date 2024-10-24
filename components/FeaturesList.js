@@ -1,6 +1,4 @@
 
-import PropTypes from 'prop-types';
-
 const FeaturesList = ({ features }) => {
   return (
     <ul>
@@ -12,8 +10,6 @@ const FeaturesList = ({ features }) => {
   );
 };
 
-FeaturesList.propTypes = {
-  features: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+
 
 export default FeaturesList;
