@@ -231,7 +231,7 @@ export default function Home() {
           <div className={`mb-8 p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-200'}`}>
             <h2 className="text-xl font-bold mb-2">{result.name}</h2>
             <p>{result.description}</p>
-            {<FeaturesList features={result.characteristics} />}
+       
           </div>
         )}
       </div>
