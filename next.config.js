@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
+
+// next.config.js
 const nextConfig = {
-    reactStrictMode: true,
-    images: {
-      domains: ['localhost'],
-    },
-  }
-  
-  module.exports = nextConfig
+  output: 'export',
+  // Otras configuraciones aquí
+};
+
+module.exports = nextConfig;  // Cambiar 'export default' a 'module.exports'
+
+
+
+//export default nextConfig
