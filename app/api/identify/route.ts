@@ -29,8 +29,6 @@ export async function POST(req: Request) {
     const response = result.response
     
     const text = response.text()
-    console.log(text)
-
     // Expresión regular para extraer el bloque JSON
     const jsonRegex = /\{[\s\S]*\}/;
     const jsonMatch = text.match(jsonRegex);
@@ -38,19 +36,7 @@ export async function POST(req: Request) {
     // Convertir el texto JSON a un objeto JavaScript
     const birdData = JSON.parse(jsonString);
     console.log(birdData);
-
-    // Mostrar los resultados
-    console.log("name:", birdData.name);
-    console.log("description :", birdData.description);
-    console.log("features:", birdData.characteristics);
-
-    const featuresList = "<ul id='features-list'>";
-    const li = "<li>"
-        // Recorrer el array y agregar cada elemento como <li> en la lista
-        {birdData.characteristics.map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
-
+    
     return NextResponse.json({ name: birdData.name, description: birdData.description, characteristics: birdData.caracteristic })
 
   } catch (error) {

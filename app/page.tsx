@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Upload, Search, AlertTriangle, Camera, Moon, Sun, Globe } from 'lucide-react'
 import { features } from 'process'
 import { List } from 'postcss/lib/list'
+import FeaturesList from '../components/FeaturesList.js';
+
 
 const translations = {
   en: {
@@ -37,7 +39,7 @@ const translations = {
 
 export default function Home() {
   const [image, setImage] = useState<string | null>(null)
-  const [result, setResult] = useState<{ name: string; description: string; characteristics: string } | null>(null)
+  const [result, setResult] = useState<{ name: string; description: string; characteristics: Array<any> } | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showCamera, setShowCamera] = useState(false)
@@ -229,10 +231,7 @@ export default function Home() {
           <div className={`mb-8 p-4 rounded-lg ${darkMode ? 'bg-gray-800' : 'bg-gray-200'}`}>
             <h2 className="text-xl font-bold mb-2">{result.name}</h2>
             <p>{result.description}</p>
-            <h2>Características:</h2>
-            <ul id="features-list">
-              {result.characteristics}
-            </ul>
+            {<FeaturesList features={result.characteristics} />}
           </div>
         )}
       </div>
